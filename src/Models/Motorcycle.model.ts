@@ -1,20 +1,20 @@
 import { Schema } from 'mongoose';
-import ICar from '../Interfaces/ICar';
+import IMotorcycle from '../Interfaces/IMotorcycle';
 import MongoModel from './AbstractODM';
 
-class CarModel extends MongoModel<ICar> {
+class MotorcycleModel extends MongoModel<IMotorcycle> {
   constructor() {
-    const schema = new Schema<ICar>({
+    const schema = new Schema<IMotorcycle>({
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },
       status: { type: Boolean, required: false },
       buyValue: { type: Number, required: true },
-      doorsQty: { type: Number, required: true },
-      seatsQty: { type: Number, required: true },
+      category: { type: String, required: true },
+      engineCapacity: { type: Number, required: true },
     });
-    super(schema, 'Car');
+    super(schema, 'Motorcycle');
   }
 }
   
-export default CarModel;
+export default MotorcycleModel;

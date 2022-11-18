@@ -1,26 +1,22 @@
-import ICar from '../Interfaces/ICar';
+import IVehicle from '../Interfaces/IVehicle';
 
-class Car {
+export default class Vehicle {
   protected id: string | undefined;
   protected model: string;
   protected year: number;
   protected color: string;
   protected status: boolean | undefined;
   protected buyValue: number;
-  private doorsQty: number;
-  private seatsQty: number;
 
   constructor(
-    car: ICar,
+    vehicle: IVehicle,
   ) {
-    this.id = car.id;
-    this.model = car.model;
-    this.year = car.year;
-    this.color = car.color;
-    this.status = car.status || false;
-    this.buyValue = car.buyValue;
-    this.doorsQty = car.doorsQty;
-    this.seatsQty = car.seatsQty;
+    this.id = vehicle.id;
+    this.model = vehicle.model;
+    this.year = vehicle.year;
+    this.color = vehicle.color;
+    this.status = vehicle.status;
+    this.buyValue = vehicle.buyValue;
   }
 
   public setId(id: string) {
@@ -70,22 +66,4 @@ class Car {
   public getBuyValue() {
     return this.buyValue;
   }
-
-  public setDoorsQty(doorsQty: number) {
-    this.doorsQty = doorsQty;
-  }
-
-  public getDoorsQty() {
-    return this.doorsQty;
-  }
-
-  public setSeatsQty(seatsQty: number) {
-    this.seatsQty = seatsQty;
-  }
-
-  public getSeatsQty() {
-    return this.seatsQty;
-  }
 }
-
-export default Car;

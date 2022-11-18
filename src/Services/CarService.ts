@@ -13,7 +13,6 @@ class CarService {
     const carModel = new CarModel();
     const cars = await carModel.create(car);
 
-    console.log('cars', cars);
     return this.createCarDomains(cars);
   }
 
